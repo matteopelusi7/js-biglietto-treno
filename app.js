@@ -35,11 +35,14 @@ let priceTicket;
 
 if (ageUser < 18) {
     priceTicket = priceTot - priceMin;
-    console.log(`il prezzo del biglietto è di ${priceTicket.toFixed(2)} €`);
+    console.log(`il prezzo del biglietto è di: ${priceTicket.toFixed(2)} €`);
+    document.getElementById('price').innerHTML = `il prezzo del biglietto è di: ${priceTicket.toFixed(2)} €`
 } else if (ageUser > 65) {
     priceTicket = priceTot - priceOver;
-    console.log(`il prezzo del biglietto è di ${priceTicket.toFixed(2)} €`);
+    console.log(`il prezzo del biglietto è di: ${priceTicket.toFixed(2)} €`);
+    document.getElementById('price').innerHTML = `il prezzo del biglietto è di: ${priceTicket.toFixed(2)} €`
 } else {
     priceTicket = priceTot;
-    console.log(`il prezzo del biglietto è di ${priceTicket} €`);
+    console.log(`il prezzo del biglietto è di: ${priceTicket} €`);
+    document.getElementById('price').innerHTML = `il prezzo del biglietto è di: ${priceTot} €`
 }
