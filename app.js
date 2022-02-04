@@ -9,26 +9,36 @@
 // Questo richiederà un minimo di ricerca.
 
 
-const kmUser = prompt('Quanti chilometri vuoi percorrere?');
+const kmUser = parseInt ( prompt('Quanti chilometri vuoi percorrere?') );
 console.log(kmUser);
 
-const ageUser = prompt('Quanti anni hai?');
+if (isNaN(kmUser)) {
+    alert ('Inserisci un numero!');
+}
+
+const ageUser = parseInt ( prompt('Quanti anni hai?') );
 console.log(ageUser);
 
-const priceTot = kmUser * 0.21
+if (isNaN(ageUser)) {
+    alert ('Inserisci un numero!');
+}
 
-const priceMin = (priceTot * 20) / 100 ;
+let priceTot = kmUser * 0.21;
 
-const priceOver = (priceTot * 40) / 100 ;
+priceTot = priceTot.toFixed(2);
+
+const priceMin = (priceTot * 20) / 100;
+
+const priceOver = (priceTot * 40) / 100;
 
 let priceTicket;
 
 if (ageUser < 18) {
-    priceTicket = priceTot - priceMin ;
-    console.log(`il prezzo del biglietto è di ${priceTicket} €`);
+    priceTicket = priceTot - priceMin;
+    console.log(`il prezzo del biglietto è di ${priceTicket.toFixed(2)} €`);
 } else if (ageUser > 65) {
-    priceTicket = priceTot - priceOver ;
-    console.log(`il prezzo del biglietto è di ${priceTicket} €`);
+    priceTicket = priceTot - priceOver;
+    console.log(`il prezzo del biglietto è di ${priceTicket.toFixed(2)} €`);
 } else {
     priceTicket = priceTot;
     console.log(`il prezzo del biglietto è di ${priceTicket} €`);
